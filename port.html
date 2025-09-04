@@ -4,301 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praveen Sai Lingala - Machine Learning Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #4285f4;
-            --accent-color: #34a853;
-            --text-color: #333333;
-            --light-gray: #f8f9fa;
-            --medium-gray: #e9ecef;
-            --dark-gray: #6c757d;
-            --white: #ffffff;
-            --gradient-1: linear-gradient(135deg, #1a73e8, #4285f4);
-            --gradient-2: linear-gradient(135deg, #34a853, #0f9d58);
-            --gradient-3: linear-gradient(135deg, #fbbc05, #ea4335);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-gray);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(26, 115, 232, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(52, 168, 83, 0.05) 0%, transparent 50%);
-            background-attachment: fixed;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
         header {
-            background: var(--white);
-            padding: 30px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .profile-info h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-            position: relative;
-        }
-        
-        .profile-info h1::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-2);
-            border-radius: 2px;
-        }
-        
-        .profile-info p {
-            font-size: 1.3rem;
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-            font-weight: 500;
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 10px;
         }
         
         .contact-info {
+            margin: 15px 0;
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 10px;
         }
         
         .contact-item {
+            background: #f0f7ff;
+            padding: 8px 15px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-            padding: 8px 15px;
-            background-color: var(--light-gray);
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background-color: var(--medium-gray);
-            transform: translateY(-2px);
-        }
-        
-        .contact-item i {
-            color: var(--primary-color);
-            font-size: 1.1rem;
+            gap: 8px;
         }
         
         .social-links {
+            margin-top: 15px;
             display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            color: var(--white);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 15px rgba(26, 115, 232, 0.4);
-        }
-        
-        section {
-            padding: 60px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-2);
-            border-radius: 2px;
-        }
-        
-        .summary {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .summary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .summary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--gradient-1);
-        }
-        
-        .summary p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-color);
-        }
-        
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .skill-category {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-2);
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
             gap: 10px;
         }
         
-        .skill-category h3 i {
-            font-size: 1.2rem;
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #1a73e8;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
         }
         
-        .skill-list {
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #34a853;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #34a853;
+        }
+        
+        .skill-category h3 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        
+        ul {
             list-style-type: none;
+            padding-left: 20px;
         }
         
-        .skill-list li {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
+        li {
             position: relative;
-            padding-left: 25px;
-            transition: all 0.2s ease;
+            padding: 5px 0;
         }
         
-        .skill-list li:hover {
-            transform: translateX(5px);
-            color: var(--primary-color);
-        }
-        
-        .skill-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
+        li:before {
+            content: "•";
+            color: #34a853;
             font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .project-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card::before {
-            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-3);
+            left: -15px;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow
+        .project-card, .experience-card, .education-card {
+            margin-bottom: 20px;
+        }
+        
+        .project-title, .experience-title, .education-degree {
+            color: #1a73e8;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        
+        .project-tech, .experience-date, .education-date {
+            background: #f0f7ff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        
+        .achievement {
+            margin-top: 15px;
+            background: #f0fff4;
+            padding: 10px 15px;
+            border-left: 4px solid #34a853;
+            border-radius: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Praveen Sai Lingala</h1>
+            <p>Machine Learning Engineer | Rezler Systems Pvt Ltd</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍 Attibele, Bengaluru – 562017</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞 +91-8970032378</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️ praveenlingala378@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/praveen-sai-lingala-a98124178" target="_blank">in</a>
+                <a href="https://github.com/Praveenlingala378" target="_blank">GH</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Machine Learning Engineer experienced in building and deploying AI-driven applications with Python and Flask. Skilled in deep learning (CNNs), image processing, and real-time systems. Hands-on expertise in GPU acceleration (CUDA, ONNX Runtime) and edge computing with Raspberry Pi and Nvidia hardware. Passionate about designing scalable, low-latency solutions for computer vision and intelligent automation.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Bash</li>
+                        <li>Embedded C/C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Deep Learning</h3>
+                    <ul>
+                        <li>CNNs</li>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries</h3>
+                    <ul>
+                        <li>scikit-learn</li>
+                        <li>NumPy</li>
+                        <li>Matplotlib</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Image Processing</h3>
+                    <ul>
+                        <li>Facial recognition</li>
+                        <li>Feature extraction</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Web/GUI</h3>
+                    <ul>
+                        <li>Flask</li>
+                        <li>Tkinter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Embedded Systems</h3>
+                    <ul>
+                        <li>Raspberry Pi</li>
+                        <li>Nvidia GPU</li>
+                        <li>RTSP cameras</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Optimization</h3>
+                    <ul>
+                        <li>CUDA</li>
+                        <li>ONNX Runtime</li>
+                        <li>Low-latency tuning</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Linux</li>
+                        <li>PostgreSQL</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Deployment</h3>
+                    <ul>
+                        <li>Docker (basic)</li>
+                        <li>PyInstaller (executables)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3 class="project-title">Smart Attendance System with Facial Recognition</h3>
+                <div class="project-tech">Python, Flask, TensorFlow, ONNX, Raspberry Pi, RTSP</div>
+                <ul>
+                    <li>Built an AI-powered attendance system using real-time facial recognition with CNNs</li>
+                    <li>Achieved 94–95% recognition accuracy on a dataset of 500+ student images with real-world testing</li>
+                    <li>Deployed edge inference on Raspberry Pi with RTSP camera integration</li>
+                    <li>Optimized inference with CUDA and ONNX Runtime on Nvidia hardware</li>
+                    <li>Developed user interface in Tkinter; visualized system metrics with Matplotlib</li>
+                    <li>Applied model optimization techniques for low-latency performance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3 class="experience-title">Machine Learning Engineer</h3>
+                <div class="experience-company">Rezler Systems Pvt. Ltd.</div>
+                <div class="experience-date">Bengaluru, India — Apr 2024 – Present</div>
+                <ul>
+                    <li>Improved facial recognition accuracy from 80% to 94% through CNN model tuning and preprocessing</li>
+                    <li>Deployed a Flask-based smart attendance system with PostgreSQL backend</li>
+                    <li>Integrated Postman-based testing pipelines for robust API validation</li>
+                    <li>Packaged applications into standalone executables, reducing client setup time by 40%</li>
+                    <li>Benchmarked inference speeds on CPU vs GPU to optimize deployment decisions</li>
+                    <li>Leveraged CUDA and ONNX Runtime for accelerated real-time inference</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3 class="education-degree">Master of Computer Applications (MCA)</h3>
+                <div class="education-school">Krupanidhi Group of Institutions, Bengaluru</div>
+                <div class="education-date">Graduated: 2023</div>
+                <div class="achievement">
+                    🏆 Ranked 4th in Bengaluru North University
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications & Engagement</h2>
+            <ul>
+                <li>📜 Deep Learning Specialization – Coursera</li>
+                <li>💼 Active LinkedIn contributor sharing project insights and AI trends</li>
+                <li>💻 GitHub portfolio showcasing open-source ML projects</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>© 2024 Praveen Sai Lingala. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
